@@ -80,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\colorify.css" />
     <Content Include="css\main.css" />
     <Content Include="Global.asax" />
     <Content Include="html\CameraAccess.html" />
@@ -88,6 +89,7 @@
     <Content Include="js\CameraAccess2.js" />
     <Content Include="js\ForgeTree.js" />
     <Content Include="js\ForgeViewer.js" />
+    <Content Include="js\colorify.js" />
     <Content Include="js\myawesomeextension.js" />
     <Content Include="Web.config" />
   </ItemGroup>
