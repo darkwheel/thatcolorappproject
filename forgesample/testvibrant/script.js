@@ -5,14 +5,14 @@
         list = document.querySelector('ul'),
         section = document.querySelector('section'),
         paletteReady = false;
-    var img2 = document.createElement('img');
+   // var img2 = document.createElement('img');
 
-    img2.setAttribute('src', 'https://vignette.wikia.nocookie.net/uncyclopedia/images/b/be/Cat.JPG/revision/latest?cb=20080529031026');
+    //img2.setAttribute('src', 'krebs.png');
 
-    img2.addEventListener('load', function () {
-        console.log("geladen2");
-        getPalette();
-    });
+    //img2.addEventListener('load', function () {
+    //    console.log("geladen2");
+    //    getPalette();
+    //});
 
 
     img.addEventListener('load', function () {
@@ -25,14 +25,14 @@
     function getPalette() {
         paletteReady = true;
         console.log("palette");
-        var vibrant = new Vibrant(img2);
+        var vibrant = new Vibrant(img);
         console.log("vibrant");
         var swatches = vibrant.swatches();
         console.log("swatches");
 
         var listFragment = new DocumentFragment();
         console.log("fragment");
-
+        console.log("swatchcount"+swatches.length);
         for (var swatch in swatches) {
             if (swatches.hasOwnProperty(swatch) && swatches[swatch]) {
                 console.log(swatch, swatches[swatch].getHex());

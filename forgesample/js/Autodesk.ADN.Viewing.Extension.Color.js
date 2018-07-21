@@ -10,6 +10,7 @@ Autodesk.ADN.Viewing.Extension.Color = function (viewer, options) {
 
     var overlayName = "temperary-colored-overlay";
     var _self = this;
+    var color = 
 
     _self.load = function () {
 
