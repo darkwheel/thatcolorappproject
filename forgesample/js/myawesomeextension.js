@@ -47,7 +47,7 @@ MyAwesomeExtension.prototype.createUI = function () {
         
         _viewer.setColorMaterial(mySelection, 0xff0000);
         
-        //window.open("http://thatcolorapp.apphb.com/html/CameraAccess.html");
+        //window.open("http://thatcolorapp.apphb.com/testvibrant/index.html");
 
         //
         //
