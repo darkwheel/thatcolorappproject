@@ -89,6 +89,10 @@
     <Content Include="js\ForgeTree.js" />
     <Content Include="js\ForgeViewer.js" />
     <Content Include="js\myawesomeextension.js" />
+    <Content Include="testvibrant\index.html" />
+    <Content Include="testvibrant\script.js" />
+    <Content Include="testvibrant\style.css" />
+    <Content Include="testvibrant\krebs.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
