@@ -36,7 +36,7 @@ MyAwesomeExtension.prototype.createUI = function () {
         // **********************
         //
         //
-        window.open("http://localhost:3000/html/CameraAccess.html");
+        window.open("http://thatcolorapp.apphb.com/html/CameraAccess.html");
 
         //
         //
