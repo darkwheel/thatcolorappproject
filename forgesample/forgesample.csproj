@@ -91,6 +91,7 @@
     <Content Include="js\ForgeViewer.js" />
     <Content Include="js\myawesomeextension.js" />
     <Content Include="js\Autodesk.ADN.Viewing.Extension.Color.js" />
+    <Content Include="testvibrant\3.jpg" />
     <Content Include="testvibrant\index.html" />
     <Content Include="testvibrant\krebs.png" />
     <Content Include="testvibrant\script.js" />
