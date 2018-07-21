@@ -8,7 +8,12 @@ function launchViewer(urn) {
   var documentId = 'urn:' + urn;
   Autodesk.Viewing.Initializer(options, function onInitialized() {
     viewerApp = new Autodesk.Viewing.ViewingApplication('forgeViewer');
-    viewerApp.registerViewer(viewerApp.k3D, Autodesk.Viewing.Private.GuiViewer3D, { extensions: ['MyAwesomeExtension'] });
+      viewerApp.registerViewer(viewerApp.k3D, Autodesk.Viewing.Private.GuiViewer3D, {
+          extensions: ['MyAwesomeExtension', 'Autodesk.ADN.Viewing.Extension.Color']});
+      //viewerApp.registerViewer(viewerApp.k3D, Autodesk.Viewing.Private.GuiViewer3D, {
+      //    extensions: ['Autodesk.ADN.Viewing.Extension.Color']
+      //});
+      
     viewerApp.loadDocument(documentId, onDocumentLoadSuccess, onDocumentLoadFailure);
   });
 }
