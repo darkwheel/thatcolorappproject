@@ -1,8 +1,13 @@
 ﻿// *******************************************
 // My Awesome Extension
 // *******************************************
+
+//<script src="/js/Autodesk.ADN.Viewing.Extension.Color.js"></script>
+var _viewer;
+
 function MyAwesomeExtension(viewer, options) {
     Autodesk.Viewing.Extension.call(this, viewer, options);
+    _viewer = viewer;
 }
 
 MyAwesomeExtension.prototype = Object.create(Autodesk.Viewing.Extension.prototype);
@@ -28,6 +33,7 @@ MyAwesomeExtension.prototype.onToolbarCreated = function () {
 
 MyAwesomeExtension.prototype.createUI = function () {
     var _this = this;
+    
 
     // prepare to execute the button action
     var myAwesomeToolbarButton = new Autodesk.Viewing.UI.Button('runMyAwesomeCode');
@@ -35,14 +41,19 @@ MyAwesomeExtension.prototype.createUI = function () {
 
         // **********************
         //
-        //
-        window.open("http://thatcolorapp.apphb.com/html/CameraAccess.html");
+
+        mySelection = _viewer.getSelection();
+        //var mySelection = [16];
+        
+        _viewer.setColorMaterial(mySelection, 0xff0000);
+        
+        //window.open("http://thatcolorapp.apphb.com/html/CameraAccess.html");
 
         //
         //
         // **********************
 
-        alert('I am an extension');
+        
 
     };
     // myAwesomeToolbarButton CSS class should be defined on your .css file
@@ -65,3 +76,20 @@ MyAwesomeExtension.prototype.unload = function () {
 };
 
 Autodesk.Viewing.theExtensionManager.registerExtension('MyAwesomeExtension', MyAwesomeExtension);
+
+function addMaterial(color) {
+    var material = new THREE.MeshPhongMaterial({
+        color: color
+    });
+    //viewer.impl.matman().addMaterial(newGuid(), material);
+    viewer.impl.createOverlayScene(overlayName, material, material);
+    return material;
+}
+
+function getAllDbIds() {
+    const { instanceTree } = this.viewer.model.getData()
+    const { dbIdToIndex } = instanceTree.nodeAccess
+    return Object.keys(dbIdToIndex).map((dbId) => {
+        return parseInt(dbId)
+    })
+}
