@@ -58,7 +58,7 @@ MyAwesomeExtension.prototype.load = function () {
     link = parseQuery(document.location.search);
     if (link["colors"] != undefined) {
         var colstr = link.colors;
-        HexDecimal1 = colstr.substr(colstr.length-5,5)
+        HexDecimal1 = colstr.substr(colstr.length-6,6)
     }; 
 
 
