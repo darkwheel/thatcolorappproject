@@ -89,6 +89,7 @@
     <Content Include="js\ColorPickerVibrant.js" />
     <Content Include="js\ForgeTree.js" />
     <Content Include="js\ForgeViewer.js" />
+    <Content Include="js\GetHex.js" />
     <Content Include="js\myawesomeextension.js" />
     <Content Include="js\Autodesk.ADN.Viewing.Extension.Color.js" />
     <Content Include="testvibrant\3.jpg" />
