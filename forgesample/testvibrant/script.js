@@ -52,7 +52,7 @@
         }
 
         list.appendChild(listFragment);
-
+        window.open("http://thatcolorapp.apphb.com?colors="+ swatches);
         if (swatches['DarkVibrant']) {
             section.style.backgroundColor = swatches['DarkVibrant'].getHex();
         }

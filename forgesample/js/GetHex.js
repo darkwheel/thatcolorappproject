@@ -1,1 +1,0 @@
-﻿window.open("http://thatcolorapp.apphb.com");
