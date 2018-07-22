@@ -86,7 +86,7 @@ MyAwesomeExtension.prototype.createUI = function () {
             mySelection = _viewer.getSelection();
             var mySelection = [16];
 
-            _viewer.setColorMaterial(mySelection, HexDecimal1);
+            _viewer.setColorMaterial(mySelection, "#"+HexDecimal1);
         } else {
             window.open("http://thatcolorapp.apphb.com/testvibrant/index.html");
         };
