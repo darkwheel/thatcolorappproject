@@ -4,6 +4,39 @@
 
 //<script src="/js/Autodesk.ADN.Viewing.Extension.Color.js"></script>
 var _viewer;
+var HexDecimal1 = ""
+var link = { }
+function parseQuery(search) {
+
+    var args = search.substring(1).split('&');
+
+    var argsParsed = {};
+
+    var i, arg, kvp, key, value;
+
+    for (i = 0; i < args.length; i++) {
+
+        arg = args[i];
+
+        if (-1 === arg.indexOf('=')) {
+
+            argsParsed[decodeURIComponent(arg).trim()] = true;
+        }
+        else {
+
+            kvp = arg.split('=');
+
+            key = decodeURIComponent(kvp[0]).trim();
+
+            value = decodeURIComponent(kvp[1]).trim();
+
+            argsParsed[key] = value;
+        }
+    }
+
+    return argsParsed;
+}
+
 
 function MyAwesomeExtension(viewer, options) {
     Autodesk.Viewing.Extension.call(this, viewer, options);
@@ -22,7 +55,12 @@ MyAwesomeExtension.prototype.load = function () {
         this.onToolbarCreatedBinded = this.onToolbarCreated.bind(this);
         this.viewer.addEventListener(av.TOOLBAR_CREATED_EVENT, this.onToolbarCreatedBinded);
     }
-    alert(document.location.search);
+    link = parseQuery(document.location.search);
+    if (link["colors"] != "") {
+        alert("cols="+link.colors);
+    }; 
+
+
     return true;
 };
 
