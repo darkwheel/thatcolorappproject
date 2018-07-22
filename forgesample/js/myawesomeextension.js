@@ -33,8 +33,9 @@ MyAwesomeExtension.prototype.onToolbarCreated = function () {
 
 MyAwesomeExtension.prototype.createUI = function () {
     var _this = this;
-    
 
+ 
+    
     // prepare to execute the button action
     var myAwesomeToolbarButton = new Autodesk.Viewing.UI.Button('runMyAwesomeCode');
     myAwesomeToolbarButton.onClick = function (e) {
@@ -42,10 +43,10 @@ MyAwesomeExtension.prototype.createUI = function () {
         // **********************
         //
 
-        mySelection = _viewer.getSelection();
+        //mySelection = _viewer.getSelection();
         //var mySelection = [16];
         
-        _viewer.setColorMaterial(mySelection, 0xff0000);
+        //_viewer.setColorMaterial(mySelection, 0xff0000);
         
         window.open("http://thatcolorapp.apphb.com/testvibrant/index.html");
 
