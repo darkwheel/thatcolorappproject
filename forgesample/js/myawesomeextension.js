@@ -56,7 +56,7 @@ MyAwesomeExtension.prototype.load = function () {
         this.viewer.addEventListener(av.TOOLBAR_CREATED_EVENT, this.onToolbarCreatedBinded);
     }
     link = parseQuery(document.location.search);
-    if (link["colors"] != "") {
+    if (link["colors"] != undefined) {
         alert("cols="+link.colors);
     }; 
 
