@@ -22,6 +22,7 @@ MyAwesomeExtension.prototype.load = function () {
         this.onToolbarCreatedBinded = this.onToolbarCreated.bind(this);
         this.viewer.addEventListener(av.TOOLBAR_CREATED_EVENT, this.onToolbarCreatedBinded);
     }
+    alert(window.location);
     return true;
 };
 

@@ -32,7 +32,9 @@
 
         var listFragment = new DocumentFragment();
         console.log("fragment");
-        console.log("swatchcount"+swatches.length);
+        console.log("swatchcount" + swatches.length);
+        var HexDecimal = "";
+        var HexList =[]
         for (var swatch in swatches) {
             if (swatches.hasOwnProperty(swatch) && swatches[swatch]) {
                 console.log(swatch, swatches[swatch].getHex());
@@ -41,7 +43,7 @@
                     small = document.createElement('small');
 
                 p.textContent = swatches[swatch].getHex();
-                var HexDecimal = HexDecimal +","+swatches[swatch].getHex()
+                HexDecimal += "," + swatches[swatch].getHex()
                 p.style.color = swatches[swatch].getTitleTextColor();
                 small.textContent = swatch;
                 small.style.color = swatches[swatch].getBodyTextColor();
@@ -51,8 +53,9 @@
                 listFragment.appendChild(li);
             }
         }
-
+        HexList=HexDecimal.split
         list.appendChild(listFragment);
+
         window.open("http://thatcolorapp.apphb.com?colors="+ HexDecimal);
         if (swatches['DarkVibrant']) {
             section.style.backgroundColor = swatches['DarkVibrant'].getHex();
