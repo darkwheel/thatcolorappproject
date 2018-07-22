@@ -43,7 +43,7 @@
                     small = document.createElement('small');
 
                 p.textContent = swatches[swatch].getHex();
-                HexDecimal += "," + swatches[swatch].getHex()
+                HexDecimal += swatches[swatch].getHex().toString().replace("#", "-");
                 p.style.color = swatches[swatch].getTitleTextColor();
                 small.textContent = swatch;
                 small.style.color = swatches[swatch].getBodyTextColor();

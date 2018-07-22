@@ -57,7 +57,8 @@ MyAwesomeExtension.prototype.load = function () {
     }
     link = parseQuery(document.location.search);
     if (link["colors"] != undefined) {
-        alert("cols="+link.colors);
+        var colstr = link.colors;
+        HexDecimal1 = colstr.substr(colstr.length-5,5)
     }; 
 
 
@@ -81,13 +82,16 @@ MyAwesomeExtension.prototype.createUI = function () {
 
         // **********************
         //
+        if (HexDecimal1 != "") {
+            mySelection = _viewer.getSelection();
+            var mySelection = [16];
 
-        //mySelection = _viewer.getSelection();
-        //var mySelection = [16];
-        
-        //_viewer.setColorMaterial(mySelection, 0xff0000);
-        
-        window.open("http://thatcolorapp.apphb.com/testvibrant/index.html");
+            _viewer.setColorMaterial(mySelection, HexDecimal1);
+        } else {
+            window.open("http://thatcolorapp.apphb.com/testvibrant/index.html");
+        };
+    
+
 
         //
         //
